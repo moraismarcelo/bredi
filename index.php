@@ -13,14 +13,15 @@ $pdo = Connect::getInstance();
 <body>
 <div class="container-fluid">
 <h1>Dashboard</h1>
-<ul class="nav nav-pills">
+<ul class="nav nav-pills p-2">
   <li class="nav-item">
-    <a class="nav-link active" href="produtos.php">Produtos</a>
+    <a class="nav-link active" href="produtos.php">Adicionar Produto</a>
   </li>
-  
+  <li class="nav-item ml-1">
+    <a class="nav-link active" href="listProducts.php">Listar Produtos</a>
+  </li>
 </ul>
 </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
 </html>

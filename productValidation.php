@@ -14,7 +14,10 @@ if($productName == ""){
 elseif($productCategory == ""){
     echo "<p>Por favor,escolha a categoria do produto.</p>";
 }else{
-    
+    $pdo = Connect::getInstance();
+    $sql = "INSERT INTO produtos (nome, preco, categoria_id) VALUES (?,?,?)";
+    $stmt= $pdo->prepare($sql);
+    $stmt->execute([$productName, $productPrice, $productCategory]);
 }
-
+header("Location: listProducts.php");
 ?>

@@ -15,16 +15,17 @@ $pdo = Connect::getInstance();
 <?php
  $stmt = $pdo->query("SELECT * FROM categorias");
  $categories = $stmt->fetchAll();
- 
 ?>
-
 <div class="container-fluid">
 <h1>Dashboard</h1>  
-<ul class="nav nav-pills">
+<ul class="nav nav-pills p-2">
   <li class="nav-item">
-    <a class="nav-link active" href="produtos.php">Produtos</a>
+    <a class="nav-link active" href="produtos.php">Adicionar Produto</a>
   </li>
-  </ul>
+  <li class="nav-item ml-1">
+    <a class="nav-link active" href="listProducts.php">Listar Produtos</a>
+  </li>
+</ul>
 <form action="productValidation.php" method="POST" name="productForm">
   <div class="form-group row">
     <label for="productName" class="col-sm-2 col-form-label">Nome</label>
@@ -54,15 +55,11 @@ $pdo = Connect::getInstance();
       <input type="submit" class="btn btn-success" value="Salvar">
     </div>  
   </div>
-  
 </form>
-
 </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-    <script src="/js/script.js" type="application/javascript"></script>
-    
-  </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script src="/js/script.js" type="application/javascript"></script>
+</body>
 </html>
