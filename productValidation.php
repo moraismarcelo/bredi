@@ -5,7 +5,6 @@ require_once __DIR__."/Classes/Connect.php";
 $productName = $_POST['productName'];
 $productPrice = $_POST['productPrice'];
 $productCategory = $_POST['productCategory'];
-
 if($productName == ""){
     echo "<p>Por favor,insira o nome do produto.</p>";
 }elseif($productPrice == ""){

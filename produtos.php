@@ -1,6 +1,7 @@
 <?php 
 require __DIR__. "/Classes/Connect.php";
 $pdo = Connect::getInstance();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,17 +27,18 @@ $pdo = Connect::getInstance();
     <a class="nav-link active" href="listProducts.php">Listar Produtos</a>
   </li>
 </ul>
-<form action="productValidation.php" method="POST" name="productForm">
+<form action="<?= isset($_GET['name'])? 'saveEditProduct.php' : 'productValidation.php'?>" method="POST" name="productForm">
   <div class="form-group row">
     <label for="productName" class="col-sm-1 col-form-label">Nome</label>
     <div class="col-sm-3">
-      <input type="text" class="form-control" id="productName" name="productName" >
+      <input type="text" class="form-control" id="productName" name="productName" value="<?= isset($_GET['name']) ? $_GET['name'] : ""  ?>">      
+      
     </div>
   </div>
   <div class="form-group row">
     <label for="productPrice" class="col-sm-1 col-form-label">Preço</label>
     <div class="col-sm-2">
-      <input type="text" class="form-control" id="productPrice" name="productPrice">
+      <input type="text" class="form-control" id="productPrice" name="productPrice" value="<?= isset($_GET['price']) ? $_GET['price'] : ""  ?>">
     </div>
   </div>
   <div class="form-group row">
@@ -47,7 +49,6 @@ $pdo = Connect::getInstance();
         echo "<option value={$category->id}> {$category->titulo}</option>";
       ?>
       </select>  
-      
     </div>
   </div>
   <div class="form-group row">

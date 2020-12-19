@@ -13,7 +13,7 @@ $pdo = Connect::getInstance();
 </head>
 <body>
 <?php
- $stmt = $pdo->query("SELECT * FROM produtos p INNER JOIN categorias c ON p.categoria_id = c.id");
+ $stmt = $pdo->query("SELECT * FROM produtos p INNER JOIN categorias c ON p.categoria_id = c.id ORDER BY p.produto_id ASC");
  $products = $stmt->fetchAll();
  ?>
 <div class="container-fluid">
@@ -26,7 +26,7 @@ $pdo = Connect::getInstance();
     <a class="nav-link active" href="listProducts.php">Listar Produtos</a>
   </li>
 </ul>
-<table class="table table-hover col-sm-5 table-sm">
+<table class="table table-hover col-sm-7 table-sm">
   <thead>
     <tr>
       <th scope="col">Id</th>
@@ -44,7 +44,7 @@ $pdo = Connect::getInstance();
       <td>{$product->nome}</td>
       <td>{$product->titulo}</td>
       <td>{$product->preco}</td>
-      <td><a href='#'><button type='button' class='btn btn-success btn-sm' id='editButton'>Editar</button></a>
+      <td><a href='editProduct.php?editar=$product->produto_id'><button type='button' class='btn btn-success btn-sm' id='editButton'>Editar</button></a>
       <a href='deleteProduct.php?deletar=$product->produto_id'><button type='button' class='btn btn-danger btn-sm deleteButton'>Excluir</button></a></td>
     </tr>
     ";

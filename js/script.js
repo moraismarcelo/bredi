@@ -17,8 +17,7 @@ $(function() {
     });
   });
   //Delet validation
- 
-  $(".deleteButton").click(function(){
+   $(".deleteButton").click(function(){
     if(confirm("Deseja remover o produto selecionado?")){
     }
     else{
