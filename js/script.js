@@ -1,3 +1,4 @@
+//form validation
 $(function() {
     $("form[name='productForm']").validate({
       rules: {
@@ -15,3 +16,12 @@ $(function() {
       }
     });
   });
+  //Delet validation
+ 
+  $(".deleteButton").click(function(){
+    if(confirm("Deseja remover o produto selecionado?")){
+    }
+    else{
+        return false;
+    }
+});

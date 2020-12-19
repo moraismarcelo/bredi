@@ -9,7 +9,7 @@ $pdo = Connect::getInstance();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css"/>
-    <title>Dashboard</title>
+    <title>Adicionar Produto</title>
 </head>
 <body>
 <?php
@@ -28,19 +28,19 @@ $pdo = Connect::getInstance();
 </ul>
 <form action="productValidation.php" method="POST" name="productForm">
   <div class="form-group row">
-    <label for="productName" class="col-sm-2 col-form-label">Nome</label>
+    <label for="productName" class="col-sm-1 col-form-label">Nome</label>
     <div class="col-sm-3">
       <input type="text" class="form-control" id="productName" name="productName" >
     </div>
   </div>
   <div class="form-group row">
-    <label for="productPrice" class="col-sm-2 col-form-label">Preço</label>
+    <label for="productPrice" class="col-sm-1 col-form-label">Preço</label>
     <div class="col-sm-2">
       <input type="text" class="form-control" id="productPrice" name="productPrice">
     </div>
   </div>
   <div class="form-group row">
-    <label for="Category" class="col-sm-2 col-form-label">Categoria</label>
+    <label for="Category" class="col-sm-1 col-form-label">Categoria</label>
     <div class="col-sm-2">
       <select class="form-control" id="productCategory" name="productCategory">
       <?php foreach ($categories as $category)

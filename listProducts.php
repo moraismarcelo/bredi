@@ -9,13 +9,13 @@ $pdo = Connect::getInstance();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css"/>
-    <title>Dashboard</title>
+    <title>Lista de Produtos</title>
 </head>
 <body>
 <?php
- $stmt = $pdo->query("SELECT * FROM produtos INNER JOIN categorias ON produtos.categoria_id = categorias.id");
+ $stmt = $pdo->query("SELECT * FROM produtos p INNER JOIN categorias c ON p.categoria_id = c.id");
  $products = $stmt->fetchAll();
-?>
+ ?>
 <div class="container-fluid">
 <h1>Dashboard</h1>  
 <ul class="nav nav-pills p-2">
@@ -40,12 +40,12 @@ $pdo = Connect::getInstance();
     <?php 
     foreach($products as $product){
      $row =  "<tr>
-      <th scope='row'>{$product->id}</th>
+      <th scope='row'>{$product->produto_id}</th>
       <td>{$product->nome}</td>
       <td>{$product->titulo}</td>
       <td>{$product->preco}</td>
-      <td><a href='#'><button type='button' class='btn btn-success btn-sm'>Editar</button></a>
-      <a href='#'><button type='button' class='btn btn-danger btn-sm'>Excluir</button></a></td>
+      <td><a href='#'><button type='button' class='btn btn-success btn-sm' id='editButton'>Editar</button></a>
+      <a href='deleteProduct.php?deletar=$product->produto_id'><button type='button' class='btn btn-danger btn-sm deleteButton'>Excluir</button></a></td>
     </tr>
     ";
     echo $row;
